@@ -29,7 +29,10 @@
   "commands": {
     "trigger-word-context": {
       "suggested_key": {
-        "default": "F9"
+        "default": "F9",
+        "windows": "F9",
+        "mac": "F9",
+        "linux": "F9"
       },
       "description": "获取单词和句子上下文"
     }

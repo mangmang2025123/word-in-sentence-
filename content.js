@@ -45,12 +45,12 @@ function getWordAtPosition(element, x, y) {
   let end = offset;
   
   // 向前找单词开始
-  while (start > 0 && /[A-Za-z0-9_'-]/.test(text[start - 1])) {
+  while (start > 0 && /[\w'-]/u.test(text[start - 1])) {
     start--;
   }
   
   // 向后找单词结束
-  while (end < text.length && /[A-Za-z0-9_'-]/.test(text[end])) {
+  while (end < text.length && /[\w'-]/u.test(text[end])) {
     end++;
   }
   
