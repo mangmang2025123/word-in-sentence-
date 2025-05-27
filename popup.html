@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 320px;
+      padding: 16px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    
+    .subtitle {
+      color: #666;
+      font-size: 12px;
+    }
+    
+    .section {
+      margin-bottom: 16px;
+      padding: 12px;
+      background: #f5f5f5;
+      border-radius: 6px;
+    }
+    
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    
+    .current-shortcut {
+      background: #e3f2fd;
+      padding: 8px;
+      border-radius: 4px;
+      margin: 8px 0;
+      font-family: monospace;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .instructions {
+      line-height: 1.6;
+      color: #555;
+    }
+    
+    .instructions ol {
+      padding-left: 20px;
+    }
+    
+    .instructions li {
+      margin-bottom: 6px;
+    }
+    
+    .highlight {
+      background: #fff3cd;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-weight: bold;
+    }
+    
+    .change-shortcut-btn {
+      background: #4285f4;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+    
+    .change-shortcut-btn:hover {
+      background: #3367d6;
+    }
+    
+    .warning {
+      color: #e67e22;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="title">Word Context Helper</div>
+    <div class="subtitle">单词上下文助手</div>
+  </div>
+  
+  <div class="section">
+    <div class="section-title">当前快捷键</div>
+    <div class="current-shortcut" id="currentShortcut">F9</div>
+    <button class="change-shortcut-btn" id="changeShortcutBtn">修改快捷键</button>
+    <div class="warning">修改快捷键需要在Chrome扩展管理页面进行</div>
+  </div>
+  
+  <div class="section">
+    <div class="section-title">使用方法</div>
+    <div class="instructions">
+      <ol>
+        <li>将鼠标移动到网页上的任意单词上</li>
+        <li>按下快捷键 <span class="highlight" id="shortcutDisplay">F9</span></li>
+        <li>扩展会自动：
+          <ul>
+            <li>识别鼠标下的单词</li>
+            <li>获取所在段落的文本</li>
+            <li>生成问题并复制到剪切板</li>
+          </ul>
+        </li>
+        <li>在任意地方粘贴使用</li>
+      </ol>
+    </div>
+  </div>
+  
+  <div class="section">
+    <div class="section-title">示例输出</div>
+    <div class="instructions">
+      <code>What does `example` mean in `This is an example sentence for demonstration.`?</code>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

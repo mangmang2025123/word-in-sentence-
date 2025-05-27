@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Word Context Helper",
+  "version": "1.0",
+  "description": "按热键获取单词和句子上下文，生成问题并复制到剪切板",
+  
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Word Context Helper Settings"
+  },
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "commands": {
+    "trigger-word-context": {
+      "suggested_key": {
+        "default": "F9"
+      },
+      "description": "获取单词和句子上下文"
+    }
+  }
+}
